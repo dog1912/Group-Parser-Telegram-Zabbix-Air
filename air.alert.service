@@ -1,0 +1,13 @@
+[Unit]
+Description=Air alert
+After=multi-user.target
+
+[Service]
+Type=simple
+Restart=always
+User=root
+ExecStart=/usr/bin/python3.7 /etc/zabbix/zabbix_agentd.d/TeleParser.py
+
+[Install]
+WantedBy=multi-user.target
+Alias=air.alert.servise
